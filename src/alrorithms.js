@@ -55,7 +55,6 @@ const selectionSort = {
     stepsFromArray: (ray) => 
     {
         let StepArray = [];
-        console.log("iran2")
         let n = ray.length;
         var i, j, min_idx;
         let currentRay = [...ray];
@@ -76,7 +75,7 @@ const selectionSort = {
                     
                     StepArray.push(logStep(currentRay,i,min_idx));
         }
-        return currentRay;
+        return StepArray;
     }
 }
 

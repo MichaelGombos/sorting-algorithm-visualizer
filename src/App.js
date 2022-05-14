@@ -18,7 +18,6 @@ const Header = () =>{
 const PrimaryNavigation = ({props}) => {
   
   const handleAlgoChange =(sorter)=>(e) => {
-    console.log(`You clicked on the ${sorter.name} button`)
     //here I want to re-render the "sorter" component
     props.setAlgo(sorter);
   }

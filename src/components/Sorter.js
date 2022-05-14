@@ -18,28 +18,45 @@ const Sorter = (props) => {
     sortedRay = steps[steps.length-1].currentArray;
     
     
+    const handleBeginning = ()=> {
+        //set step to 0
+        setStep(0);
+    }
+    const handlePrevious = ()=>{
+        //subtract 1 from step
+        if(step>0){
+            setStep(step-1)
+        }
+
+    }
+    const handlePause = ()=> {
+        //TODO switches the "playing" boolean.
+    }
+    const handleNext = ()=> {
+        //add 1 to step
+        if(step<steps.length-1){
+                setStep(step+1)
+        }
+
+    }
+    const handleEnd = ()=> {
+        //set step to steps.length-1
+        setStep(steps.length-1)
+    }
     
 
-    
-    console.log("props",props);
-    console.log("props.currentAlgo",props.currentAlgo);
-    console.log();
-    const handleCommand =(command)=>(e) => {
-    console.log(`You clicked on the command button`)
-    //here I want to re-render the "sorter" component
-    
-    }
         
   return(
     <div id="sorter">
         <div id="sorter-header">
             <h2>{currentSorter.name}</h2>
             <div id="sorter-control-bar">
-                <button>Start</button>
-                <button>Previous</button>
-                <button>Pause</button>
-                <button>Next</button>
-                <button>Last</button>
+                <button onClick ={handleBeginning}>Beginning</button>
+                <button onClick ={handlePrevious}>Previous</button>
+                <button onClick ={handlePause}>Pause/Play</button>
+                <button onClick ={handleNext}>Next</button>
+                <button onClick ={handleEnd}>End</button>
+                {/*I need an object that holds, the step, the current step, and calculated the percentage*/}
                 <p>[███████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒]</p>
             </div>
             <div id="current-array">
