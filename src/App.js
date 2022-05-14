@@ -39,12 +39,6 @@ const PrimaryNavigation = ({props}) => {
       )
 }
 
-
-
-let crackRay = [4,1,2,3,64.3333,6,23,1,123,6,34,1];
-// console.log("original",crackRay)
-console.log(algo.bubbleSort.algorithm(crackRay));
-
   
 function App() {
   const [currentAlgo,setAlgo] = useState(algo.bubbleSort);
