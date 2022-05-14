@@ -15,16 +15,12 @@ const Header = () =>{
 }
 
 
-const PrimaryNavigation = (props) => {
+const PrimaryNavigation = ({props}) => {
   
-  //Causes an error... I am going to need to pass an object that contains a function, instead of just a function.
-  // const [sorter, setSorter] = useState(algo["bubbleSort"]);
-  
-  const handleAlgoChange =(sorter)=>() => {
+  const handleAlgoChange =(sorter)=>(e) => {
     console.log(`You clicked on the ${sorter.name} button`)
-    console.log(`Description: ${sorter.description}`)
     //here I want to re-render the "sorter" component
-    
+    props.setAlgo(sorter);
   }
   
 
@@ -49,15 +45,16 @@ let crackRay = [4,1,2,3,64.3333,6,23,1,123,6,34,1];
 // console.log("original",crackRay)
 console.log(algo.bubbleSort.algorithm(crackRay));
 
-const handleSorter = () => {
   
-}
 function App() {
+  const [currentAlgo,setAlgo] = useState(algo.bubbleSort);
+  
+  //passing the other components the current state.
   return (
     <div className="App">
         <Header/>
-        <PrimaryNavigation/>
-        <Sorter />
+        <PrimaryNavigation props={{currentAlgo,setAlgo}}/>
+        <Sorter props={{currentAlgo,setAlgo}}/>
     </div>
   );
 }
