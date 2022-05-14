@@ -44,7 +44,9 @@ const Sorter = (props) => {
         setStep(steps.length-1)
     }
     
-
+    const calcPercentage = (part,whole) => {
+        return (part/whole) * 100;
+    }
         
   return(
     <div id="sorter">
@@ -56,8 +58,10 @@ const Sorter = (props) => {
                 <button onClick ={handlePause}>Pause/Play</button>
                 <button onClick ={handleNext}>Next</button>
                 <button onClick ={handleEnd}>End</button>
-                {/*I need an object that holds, the step, the current step, and calculated the percentage*/}
-                <p>[███████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒]</p>
+                {/*TODO need an object that holds, the step, the current step, and calculated the percentage*/}
+                <p>Percentage done:: {calcPercentage(step,steps.length-1)}</p>
+                <h3>STEP {step}:: {steps[step].change}</h3>
+                <progress id="step-bar" max={steps.length-1} value={step}></progress>
             </div>
             <div id="current-array">
                 <h4>starting array</h4>
