@@ -1,8 +1,16 @@
 import React from 'react'
 
-const logStep = (currentRay,index1,index2) => {
+const logStep = (type,currentRay,index1,index2) => {
+    let changeString;
+    
+    if(type == "swap"){
+        changeString =`Swapped ${currentRay[index1]} at ray[${index1}] with ${currentRay[index2]} at ray[${index2}]`
+    }
+    else if(type == 'skip'){
+        changeString =`Skipped over ${currentRay[index1]} at ray[${index1}] after comparing against ${currentRay[index2]} at ray[${index2}]`
+    }
     let step = {
-     change: `Swapped ${currentRay[index1]} at ray[${index1}] with ${currentRay[index2]} at ray[${index2}]`,
+     change: changeString,
      currentArray: [...currentRay],
      percentDone:null
      } 
@@ -35,8 +43,11 @@ const bubbleSort = {
           // console.log(`Swapped ${ray[j]} at ray[${j}] with ${ray[j+1]} at ray[${j+1}]`)
           // console.log(`CurrentRay ${ray}`);
            
-           StepArray.push(logStep(currentRay,j,j+1));
+           StepArray.push(logStep("swap",currentRay,j,j+1));
            //step ray append current
+          }
+          else{
+              StepArray.push(logStep("skip",currentRay,j,j+1));
           }
       }
   }
@@ -65,7 +76,9 @@ const selectionSort = {
             // Find the minimum element in unsorted array
             min_idx = i;
             for (j = i + 1; j < n; j++)
+            {
                 if (currentRay[j] < currentRay[min_idx])
+                {
                     min_idx = j;
          
                 // Swap the found minimum element with the first element
@@ -73,7 +86,13 @@ const selectionSort = {
                     currentRay[min_idx] = currentRay[i];
                     currentRay[i] = temp;
                     
-                    StepArray.push(logStep(currentRay,i,min_idx));
+                    StepArray.push(logStep("swap",currentRay,i,min_idx));
+                 }
+                else
+                {
+                    StepArray.push(logStep("skip",currentRay,i,min_idx));
+                }
+            }
         }
         return StepArray;
     }
