@@ -13,9 +13,7 @@ const Sorter = (props) => {
     const {currentAlgo,setAlgo,step,setStep,steps,setSteps} = props;
     props = props.props;
     const currentSorter = currentAlgo;
-    const starterRay = [2,3,4,5,3,2,4,7,5,3];
-    let sortedRay = [];
-    
+    let sortedRay = steps[steps.length-1].currentArray;
 
     const handleBeginning = ()=> {
         //set step to 0
@@ -47,7 +45,16 @@ const Sorter = (props) => {
         return (part/whole) * 100;
     }
         
-
+    //need a function to find the largest item in array
+    const findLargest = (ray) =>{
+        let largest = Number.MIN_SAFE_INTEGER;
+        for(let item of ray){
+            if (item > largest){
+                largest = item;
+            }
+        }
+        return largest;
+    }
   return(
     <div id="sorter">
         <div id="sorter-header">
@@ -60,12 +67,15 @@ const Sorter = (props) => {
                 <button onClick ={handleEnd}>End</button>
                 {/*TODO need an object that holds, the step, the current step, and calculated the percentage*/}
                 <p>Percentage done:: {calcPercentage(step,steps.length-1)}</p>
-                <h3>STEP {step}:: {steps[step].change}</h3>
                 <progress id="step-bar" max={steps.length-1} value={step}></progress>
+                <h3>STEP {step}:: {steps[step].change}</h3>
+                
             </div>
             <div id="current-array">
+                <div id="array-display">
+                {steps[step].currentArray.map((item,index) =>  <div key={index}><progress className="value" max={findLargest(steps[step].currentArray)} value={item}></progress>{item}</div>)}</div>
                 <h4>starting array</h4>
-                <p>[{starterRay.join(",")}]</p>
+                <p>[{steps[0].currentArray.join(",")}]</p>
                 <h4>current array</h4>
                 <p>[{steps[step].currentArray.join(",")}]</p>
                 <h4>solved array</h4>

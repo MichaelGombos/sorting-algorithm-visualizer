@@ -25,7 +25,10 @@ const bubbleSort = {
     stepsFromArray:  (ray) =>
 {
   //hold an array of step objects, this will allow us to "backtrack" this sort later.
-  let StepArray = [];
+  let StepArray = [{
+      change:"Starting Index 0. No change detected.",
+      currentArray: [...ray],
+  }];
   let currentRay = [...ray]
   let n = ray.length;
   let i, j;
@@ -47,9 +50,9 @@ const bubbleSort = {
            StepArray.push(logStep("swap",currentRay,j,j+1));
            //step ray append current
           }
-          else{
-              StepArray.push(logStep("skip",currentRay,j,j+1));
-          }
+        //   else{
+        //       StepArray.push(logStep("skip",currentRay,j,j+1));
+        //   }
       }
   }
   //need to return the complete ray object, 
@@ -66,35 +69,39 @@ const selectionSort = {
     description:"//todo informative description of the Selection sort algorithm",
     stepsFromArray: (ray) => 
     {
-        let StepArray = [];
         let n = ray.length;
-        var i, j, min_idx;
+        let i, j, min_idx;
         let currentRay = [...ray];
-     
+           let StepArray = [{
+          change:"Starting Index 0. No change detected.",
+          currentArray: [...ray],
+        }];
         // One by one move boundary of unsorted subarray
-        for (i = 0; i < n-1; i++)
+        for (i = 0; i < n; i++)
         {
             // Find the minimum element in unsorted array
             min_idx = i;
-            for (j = i + 1; j < n; j++)
-            {
-                if (currentRay[j] < currentRay[min_idx])
-                {
+            for (j = i; j < n; j++)
+            {   
+                     if (currentRay[j] < currentRay[min_idx])
+                {   
                     min_idx = j;
-         
-                // Swap the found minimum element with the first element
-                    var temp = currentRay[min_idx];
-                    currentRay[min_idx] = currentRay[i];
-                    currentRay[i] = temp;
-                    
-                    StepArray.push(logStep("swap",currentRay,i,min_idx));
                  }
-                else
-                {
-                    StepArray.push(logStep("skip",currentRay,i,min_idx));
-                }
             }
+            if(min_idx != i){
+             //swap
+            let temp = currentRay[min_idx];
+            currentRay[min_idx] = currentRay[i];
+            currentRay[i] = temp;
+            
+            StepArray.push(logStep("swap",currentRay,i,min_idx));
+            }
+            // else
+            // {
+            //     StepArray.push(logStep("skip",currentRay,i,min_idx));
+            // }
         }
+        
         return StepArray;
     }
 }

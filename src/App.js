@@ -21,7 +21,7 @@ const PrimaryNavigation = ({props}) => {
     //here I want to re-render the "sorter" component
     props.setAlgo(sorter);
     props.setSteps(sorter.stepsFromArray(props.defaultArray))
-    props.setStep(props.step);
+    props.setStep(0);
   }
   
 
@@ -42,7 +42,7 @@ const PrimaryNavigation = ({props}) => {
 
   
 function App() {
-  let defaultArray = [2,3,4,5,3,2,4,7,5,3];
+  let defaultArray = [  16, 57, 18, 19, 0, 21, 23, 25, 44, 27];
   const [currentAlgo,setAlgo] = useState(algo.bubbleSort);
   const [step,setStep] = useState(0);
   const [steps,setSteps] = useState(algo.bubbleSort.stepsFromArray(defaultArray))
