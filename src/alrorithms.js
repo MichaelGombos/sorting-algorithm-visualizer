@@ -17,6 +17,7 @@ const logStep = (type,currentRay,index1,index2) => {
      return step;
 }
 
+
 //its important that the algorims do not mutate the original array.
 const bubbleSort = {
     name:"bubble sort",
@@ -97,5 +98,6 @@ const selectionSort = {
         return StepArray;
     }
 }
+
 
 export {bubbleSort,selectionSort};
