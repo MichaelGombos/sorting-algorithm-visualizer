@@ -23,32 +23,33 @@ This project currently supports 2 different sorting algorithms, they include.
 - insertion sort
 - merge sort
 - quick sort
-- 
-### TODO even later
--Iterative Quick Sort
--Shell Sort
--Radix Sort
--Tim Sort
--Bucket Sort
--Comb Sort
--Gnome Sort
--Pigionhole Sort
--Sleep Sort
--Recursive Bubble Sort
--Cycle Sort
--Stooge Sort
--Cocktail Sort
--Tag Sort
--Recursive insertion sort
--Strand Sort
--Tree Sort
--Bitonic Sort
--Cartesian Tree Sorting
--Iterative Merge Sort
--Pancake Sort
--Brick Sort
--Binary Insertion Sort
--3 Way QuickSort
 
+### TODO even later
+
+- Iterative Quick Sort
+- Shell Sort
+- Radix Sort
+- Tim Sort
+- Bucket Sort
+- Comb Sort
+- Gnome Sort
+- Pigionhole Sort
+- Sleep Sort
+- Recursive Bubble Sort
+- Cycle Sort
+- Stooge Sort
+- Cocktail Sort
+- Tag Sort
+- Recursive insertion sort
+- Strand Sort
+- Tree Sort
+- Bitonic Sort
+- Cartesian Tree Sorting
+- Iterative Merge Sort
+- Pancake Sort
+- Brick Sort
+- Binary Insertion Sort
+- 3 Way QuickSort
+  
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
