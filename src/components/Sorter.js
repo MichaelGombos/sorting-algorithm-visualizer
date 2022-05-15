@@ -1,6 +1,6 @@
 import React from 'react'
 //This file is meant to hold the sorter component, aswell as the list of algorithms
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 //the sorter function should instantly run, and then provide a "stepArray" list  
 // this will allow the user to iterate through the array at a given "step" through the alrorithm
 
@@ -17,11 +17,6 @@ const Sorter = (props) => {
     let sortedRay = [];
     
 
-    // useEffect(()=>{
-    //   setSteps(currentAlgo.stepsFromArray(starterRay))
-    // })
-     //state for the current step index of the sorter
-    
     const handleBeginning = ()=> {
         //set step to 0
         setStep(0);
