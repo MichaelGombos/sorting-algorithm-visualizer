@@ -20,6 +20,8 @@ const PrimaryNavigation = ({props}) => {
   const handleAlgoChange =(sorter)=>(e) => {
     //here I want to re-render the "sorter" component
     props.setAlgo(sorter);
+    props.setSteps(sorter.stepsFromArray(props.defaultArray))
+    props.setStep(props.step);
   }
   
 
@@ -40,14 +42,16 @@ const PrimaryNavigation = ({props}) => {
 
   
 function App() {
+  let defaultArray = [2,3,4,5,3,2,4,7,5,3];
   const [currentAlgo,setAlgo] = useState(algo.bubbleSort);
-  
-  //passing the other components the current state.
+  const [step,setStep] = useState(0);
+  const [steps,setSteps] = useState(algo.bubbleSort.stepsFromArray(defaultArray))
+ 
   return (
     <div className="App">
         <Header/>
-        <PrimaryNavigation props={{currentAlgo,setAlgo}}/>
-        <Sorter props={{currentAlgo,setAlgo}}/>
+        <PrimaryNavigation props={{currentAlgo,setAlgo,step,setStep,steps,setSteps,defaultArray}}/>
+        <Sorter props={{currentAlgo,setAlgo,step,setStep,steps,setSteps}}/>
     </div>
   );
 }
