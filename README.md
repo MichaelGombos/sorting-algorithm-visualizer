@@ -1,6 +1,6 @@
 # Sorting Algorithm Visualizer
 
-This project was created to provide a visual representation for common (and uncommon) sorting algorithms.
+This project was created to provide a visual representation for sorting algorithms.
 
 ## Build
 
