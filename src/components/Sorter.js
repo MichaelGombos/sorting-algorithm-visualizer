@@ -60,19 +60,20 @@ const Sorter = (props) => {
         <div id="sorter-header">
             <div className="container">
                 <h2 className="mb-0">{currentSorter.name}</h2>
-                <div id="sorter-control-bar">
+                <div class="control-bar">
                     <button onClick ={handleBeginning}>Beginning</button>
                     <button onClick ={handlePrevious}>Previous</button>
                     <button onClick ={handlePause}>Pause/Play</button>
                     <button onClick ={handleNext}>Next</button>
                     <button onClick ={handleEnd}>End</button>
                     {/*TODO need an object that holds, the step, the current step, and calculated the percentage*/}
-                    <p>STEP {step}/{steps.length-1} :: {steps[step].change}</p>
-                    <p>Percentage done:: {calcPercentage(step,steps.length-1)}</p>
-                    <progress id="step-bar" max={steps.length-1} value={step}></progress>
-                    
-                    
+                    <div class="progress-bar-wrapper">
+                        <div style={{width: calcPercentage(step,steps.length-1)+"%"}} class="progress-bar">
+                            <p class="progress-bar-text">{calcPercentage(step,steps.length-1).toFixed(2)}%</p>
+                        </div>
+                    </div>
                 </div>
+                <p>STEP {step}/{steps.length-1} :: {steps[step].change}</p>
                 <div id="array-display-wrap">
                     <div id="array-display">
                     {steps[step].currentArray.map((item,index) =>  <div key={index} className="value-bar-container"><p>{/*item*/}</p><div className="value-bar" style={{height:`${item/findLargest(steps[step].currentArray)*100}%`}}></div></div>)}</div>

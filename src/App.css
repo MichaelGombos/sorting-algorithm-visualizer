@@ -59,6 +59,11 @@ header p{
 #primary-nav{
     margin-top:40px;
     margin-bottom:40px;
+    
+    
+}
+#primary-nav .selected{
+    background-color:var(--dark-primary-color);
 }
 button{
     background-color:#11161F;
@@ -76,6 +81,32 @@ button:hover{
 #sorter-header{
      background-color:  var(--darker-primary-color);
      padding:30px 0px;
+}
+
+/*limit the control bar*/
+#sorter-header .control-bar{
+    width:fit-content;
+}
+#sorter-header .control-bar button{
+    background-color:white;
+    color:black;
+}
+#sorter-header .control-bar button:hover{
+    background-color:var(--primary-color);
+    color:white;
+}
+#sorter-header .progress-bar-wrapper{
+    background-color:grey;
+    width:100%;
+}
+#sorter-header .progress-bar{
+    background-color:var(--primary-color);
+    height:22px;
+}
+#sorter-header .progress-bar-text{
+    font-weight:bold;
+    text-align:end;
+    
 }
 #current-array{
 }

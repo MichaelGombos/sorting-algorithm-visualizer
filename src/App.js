@@ -21,9 +21,24 @@ const PrimaryNavigation = ({props}) => {
   
   const handleAlgoChange =(sorter)=>(e) => {
     //here I want to re-render the "sorter" component
-    props.setAlgo(sorter);
+   props.setAlgo(sorter);
+   
+   //when clicked, only if current algo = e.target algo then change to selected
     props.setSteps(sorter.stepsFromArray(props.defaultArray))
     props.setStep(0);
+    //grab list of other buttons
+    const primaryNav = document.getElementById("primary-nav");
+    const otherButtons = primaryNav.getElementsByTagName("button");
+    const otherButtonsRay = Array.from(otherButtons).filter(item => item !=e.target);
+    
+      e.target.className = ("selected");
+      //remove other button classes
+      for(const btn of otherButtonsRay){
+        btn.className=("")
+      }
+    
+        
+
   }
   
 
