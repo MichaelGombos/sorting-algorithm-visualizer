@@ -21,7 +21,8 @@ const logStep = (type,currentRay,index1,index2) => {
 //its important that the algorims do not mutate the original array.
 const bubbleSort = {
     name:"bubble sort",
-    description:"//todo informative description of the bubble sort algorithm",
+    description:"//todo interesting description of the bubble sort algorithm",
+    codeExample:"//todo informative code example for bubble sort",
     stepsFromArray:  (ray) =>
 {
   //hold an array of step objects, this will allow us to "backtrack" this sort later.
@@ -67,6 +68,7 @@ const bubbleSort = {
 const selectionSort = {
     name:"selection sort",
     description:"//todo informative description of the Selection sort algorithm",
+    codeExample:"//todo informative code example for Selection sort",
     stepsFromArray: (ray) => 
     {
         let n = ray.length;

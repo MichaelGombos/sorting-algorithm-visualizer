@@ -56,41 +56,37 @@ const Sorter = (props) => {
         return largest;
     }
   return(
-    <div id="sorter">
+    <div id="sorter" >
         <div id="sorter-header">
-            <h2>{currentSorter.name}</h2>
-            <div id="sorter-control-bar">
-                <button onClick ={handleBeginning}>Beginning</button>
-                <button onClick ={handlePrevious}>Previous</button>
-                <button onClick ={handlePause}>Pause/Play</button>
-                <button onClick ={handleNext}>Next</button>
-                <button onClick ={handleEnd}>End</button>
-                {/*TODO need an object that holds, the step, the current step, and calculated the percentage*/}
-                <p>Percentage done:: {calcPercentage(step,steps.length-1)}</p>
-                <progress id="step-bar" max={steps.length-1} value={step}></progress>
-                <h3>STEP {step}:: {steps[step].change}</h3>
-                
+            <div className="container">
+                <h2 className="mb-0">{currentSorter.name}</h2>
+                <div id="sorter-control-bar">
+                    <button onClick ={handleBeginning}>Beginning</button>
+                    <button onClick ={handlePrevious}>Previous</button>
+                    <button onClick ={handlePause}>Pause/Play</button>
+                    <button onClick ={handleNext}>Next</button>
+                    <button onClick ={handleEnd}>End</button>
+                    {/*TODO need an object that holds, the step, the current step, and calculated the percentage*/}
+                    <p>STEP {step}/{steps.length-1} :: {steps[step].change}</p>
+                    <p>Percentage done:: {calcPercentage(step,steps.length-1)}</p>
+                    <progress id="step-bar" max={steps.length-1} value={step}></progress>
+                    
+                    
+                </div>
+                <div id="array-display-wrap">
+                    <div id="array-display">
+                    {steps[step].currentArray.map((item,index) =>  <div key={index} className="value-bar-container"><p>{/*item*/}</p><div className="value-bar" style={{height:`${item/findLargest(steps[step].currentArray)*100}%`}}></div></div>)}</div>
+                </div>
+                <p>It tooks {steps.length} swaps for {currentSorter.name} to sort the array</p>
             </div>
-            <div id="current-array">
-                <div id="array-display">
-                {steps[step].currentArray.map((item,index) =>  <div key={index}><progress className="value" max={findLargest(steps[step].currentArray)} value={item}></progress>{item}</div>)}</div>
-                <h4>starting array</h4>
-                <p>[{steps[0].currentArray.join(",")}]</p>
-                <h4>current array</h4>
-                <p>[{steps[step].currentArray.join(",")}]</p>
-                <h4>solved array</h4>
-                <p>[{sortedRay.join(",")}]</p>
-            </div>
-            <p>Completed in {null} (Javascript)</p>
-            <p>It tooks {steps.length} steps for this algorithm to solve</p>
         </div>
-        <div id="sorter-footer">
+        <div id="sorter-footer" className="container">
             <div id="sorter-description">
-                <h2>Description:</h2>
+                <h3>Description:</h3>
                 <p>{currentSorter.description}</p>
             </div>
             <div id="sorter-download">
-                <h2>View the code examlpe for this sort</h2>
+                <h3>View the code example for this sort</h3>
                 <p>{currentSorter.codeExample}</p>
             </div>
         </div>

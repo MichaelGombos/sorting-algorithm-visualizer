@@ -2,14 +2,16 @@ import './App.css';
 import Sorter from './components/Sorter'
 import { useState } from 'react';
 import * as algo from "./alrorithms.js";
-
+import githubIcon from './assets/github.png';
 
 const Header = () =>{
   return(
-  <header className="App-header">
+  <header id="app-header">
+      <div className="container">
+          <a href="https://github.com/MichaelGombos/sorting-algorithm-visualizer"><img src={githubIcon}/></a>
           <h1>Sorting Algorithm Visualizer</h1>
           <p>This project was created to provide a visual representation for common (and uncommon) sorting algorithms.</p>
-          <a href="http://www.google.com">Link to github repository</a>
+      </div>
   </header>
       )
 }
@@ -26,7 +28,7 @@ const PrimaryNavigation = ({props}) => {
   
 
   return(
-    <nav>
+    <nav id="primary-nav"className="container">
           <ul>
               {/*<li><button>Heap Sort</button></li>*/}
               {/*<li><button>Counting Sort</button></li>*/}
@@ -42,13 +44,13 @@ const PrimaryNavigation = ({props}) => {
 
   
 function App() {
-  let defaultArray = [  16, 57, 18, 19, 0, 21, 23, 25, 44, 27];
+  let defaultArray = [  57,57,57,57,16, 57, 18,57,57,57,57,16, 57, 18, 19, 0, 21, 23, 25,57,57,57,57,16, 57, 18,57,57,57,57,16, 57, 18, 19, 0, 44, 27];
   const [currentAlgo,setAlgo] = useState(algo.bubbleSort);
   const [step,setStep] = useState(0);
   const [steps,setSteps] = useState(algo.bubbleSort.stepsFromArray(defaultArray))
  
   return (
-    <div className="App">
+    <div id="app">
         <Header/>
         <PrimaryNavigation props={{currentAlgo,setAlgo,step,setStep,steps,setSteps,defaultArray}}/>
         <Sorter props={{currentAlgo,setAlgo,step,setStep,steps,setSteps}}/>
