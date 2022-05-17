@@ -45,13 +45,21 @@ const PrimaryNavigation = ({props}) => {
   return(
     <nav id="primary-nav"className="container">
           <ul>
-              {/*<li><button>Heap Sort</button></li>*/}
-              {/*<li><button>Counting Sort</button></li>*/}
               <li><button onClick={handleAlgoChange(algo.selectionSort)}>Selection Sort</button></li>
               <li><button onClick={handleAlgoChange(algo.bubbleSort)}>  Bubble Sort</button></li>
-              {/*<li><button>Insertion Sort</button></li>*/}
-              {/*<li><button>Merge Sort</button></li>*/}
-              {/*<li><button>Quick Sort</button></li>*/}
+              <li><button onClick={handleAlgoChange(algo.recursiveBubbleSort)}>  Bubble Sort</button></li>
+              <li><button onClick={handleAlgoChange(algo.insertionSort)}> InertionSort</button></li>
+              <li><button onClick={handleAlgoChange(algo.combSort)}>Comb Sort</button></li>
+              <li><button onClick={handleAlgoChange(algo.pigeonholeSort)}>Pigeonhole Sort</button></li>
+              <li><button onClick={handleAlgoChange(algo.cycleSort)}>Cycle Sort</button></li>
+              <li><button onClick={handleAlgoChange(algo.cocktailSort)}>Cocktail Sort</button></li>
+              <li><button onClick={handleAlgoChange(algo.bitonicSort)}>Bitonic Sort</button></li>
+              <li><button onClick={handleAlgoChange(algo.pancakeSort)}>Pancake sort</button></li>
+              <li><button onClick={handleAlgoChange(algo.binaryInsertionSort)}>Binary Insertion Sort</button></li>
+              <li><button onClick={handleAlgoChange(algo.bogoSort)}>BogoSort</button></li>
+              <li><button onClick={handleAlgoChange(algo.gnomeSort)}>Gnome Sort</button></li>
+              <li><button onClick={handleAlgoChange(algo.stoogeSort)}>Stooge Sort</button></li>
+              <li><button onClick={handleAlgoChange(algo.brickSort)}>Brick Sort</button></li>
           </ul>
       </nav>
       )
@@ -59,7 +67,9 @@ const PrimaryNavigation = ({props}) => {
 
   
 function App() {
-  let defaultArray = [  57,57,57,57,16, 57, 18,57,57,57,57,16, 57, 18, 19, 0, 21, 23, 25,57,57,57,57,16, 57, 18,57,57,57,57,16, 57, 18, 19, 0, 44, 27];
+  let defaultArray = [  65, 58, 76, 47, 61, 77, 91, 57, 25, 53, 42, 38, 6, 96, 80, 72, 24, 37, 22, 64, 66, 68, 63, 26, 35, 54, 93, 60, 21, 33, 43, 87, 3, 30, 62, 17, 1, 34, 97, 71, 9, 52, 88, 100, 59, 70, 13, 27, 8, 44
+,65, 58, 76, 47, 61, 77, 91, 57, 25, 53, 42, 38, 6, 96, 80, 72, 24, 37, 22, 64, 66, 68, 63, 26, 35, 54, 93, 60, 21, 33, 43, 87, 3, 30, 62, 17, 1, 34, 97, 71, 9, 52, 88, 100, 59, 70, 13, 27, 8, 44
+];
   const [currentAlgo,setAlgo] = useState(algo.bubbleSort);
   const [step,setStep] = useState(0);
   const [steps,setSteps] = useState(algo.bubbleSort.stepsFromArray(defaultArray))
