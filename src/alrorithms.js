@@ -81,7 +81,7 @@ const selectionSort = {
 const bubbleSort = {
     name:"bubble sort",
     description:<div><p>"Bubble sort works by swapping adjacent items of an array if they are in the wrong order. This algorithm is not suited for large data sets due to its high average and worst case time complexity."</p></div>,
-    codeExample:"//todo informative code example for bubble sort",
+    codeExample:null,
     stepsFromArray:  (ray) =>
     {
       //hold an array of step objects, this will allow us to "backtrack" this sort later.
@@ -215,7 +215,7 @@ const insertionSort = {
 const combSort = {
     name:"comb sort",
     description:<div><p>Comb sort is like BubbleSort+ . It improves on bubble sort by using a gap size larger than 1. This gap value starts with a large value and shrinks by a factor of 1.3 before reaching one. </p></div>,
-    codeExample:`//todo informative code example for `,
+    codeExample:null,
     stepsFromArray: (ray) => 
     {
     const getNextGap = (gap) =>{
@@ -376,8 +376,8 @@ const cycleSort = {
 
 const cocktailSort = {
     name:"cocktail sort",
-    description:`//todo informative description of the algorithm`,
-    codeExample:`//todo informative code example for`,
+    description:<div><p>Similar to bubble sort, cocktail sort works by iterating through the array, and comparing adjacent elements before swapping. The only different is that cocktail sort alternates between going from the right then back from the left through the array.</p></div>,
+    codeExample:null,
     stepsFromArray: (ray) => 
     {
         let cocktailStepArray = [{
@@ -515,8 +515,27 @@ const cocktailSort = {
 
 const gnomeSort = {
     name:"gnome sort",
-    description:`//todo informative description of the algorithm`,
-    codeExample:`//todo informative code example for `,
+    description:<div><p>Gone sort works by building a sorted list one item at a time, getting each item to the proper place in a series of swaps. </p></div>,
+    codeExample:<div>
+        <ol>
+            <li><p>
+            If you are at the start of the array then go to the right element (from arr[0] to arr[1]).
+            </p></li>
+            <li><p>
+            If the current array element is larger or equal to the previous array element then go one step right
+            </p></li>
+            <li><p>
+            If the current array element is smaller than the previous array element then swap these two elements and go one step backwards
+            </p></li>
+            <li><p> 
+            Repeat steps 2) and 3) till ‘i’ reaches the end of the array (i.e- ‘n-1’)
+            </p></li>
+            <li><p>
+            If the end of the array is reached then stop and the array is sorted.
+            </p></li>
+            {/*<li><p></p></li>*/}
+        </ol>
+    </div>,
     stepsFromArray: (ray) => 
     {
         let gnomeStepArray = [{
@@ -566,8 +585,14 @@ const gnomeSort = {
 
 const brickSort = {
     name:"brick sort",
-    description:`//todo informative description of the  algorithm`,
-    codeExample:`//todo informative code example for `,
+    description:<div><p>This is a variation of bubble sort. The algorithm is divided into two phases, odd and even. The algorithm will run until the array elements are sorted. In each iteratoin across the array two individual bubble sort phases are run on the array;</p>
+     <br/> 
+     <ul>
+        <li><p>One for the odd elements</p></li>
+        <li><p>And one for the even elements</p></li>
+     </ul>
+     </div>,
+    codeExample:null,
     stepsFromArray: (ray) => 
     {
         let oddEvenStepArray = [{

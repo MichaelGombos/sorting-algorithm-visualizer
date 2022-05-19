@@ -129,10 +129,15 @@ const Sorter = (props) => {
                 <h3>Description:</h3>
                 <div>{currentSorter.description}</div>
             </div>
-            <div id="sorter-download">
+            {
+                //only render the breakdown if one is provided by the algo
+                currentSorter.codeExample ? 
+                <div id="sorter-breakdown">
                 <h3>Step by step breakdown of {currentSorter.name}</h3>
                 <div>{currentSorter.codeExample}</div>
             </div>
+            : null
+            }
         </div>
     </div>
     )
