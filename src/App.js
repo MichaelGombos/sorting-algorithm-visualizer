@@ -1,6 +1,8 @@
 import './App.css';
 import Sorter from './components/Sorter'
 import { useState } from 'react';
+import { motion } from "framer-motion"
+
 import * as algo from "./alrorithms.js";
 import githubIcon from './assets/github.png';
 
@@ -8,7 +10,7 @@ const Header = () =>{
   return(
   <header id="app-header">
       <div className="container">
-          <a href="https://github.com/MichaelGombos/sorting-algorithm-visualizer"><img src={githubIcon}/></a>
+          <a href="https://github.com/MichaelGombos/sorting-algorithm-visualizer"><motion.img whileHover={{rotate:30}} whileTap={{ scale: 0.9 }}  src={githubIcon}/></a>
           <h1>Sorting Algorithm Visualizer</h1>
           <p>This project was created to provide a visual representation for common (and uncommon) sorting algorithms.</p>
       </div>
@@ -35,10 +37,10 @@ const PrimaryNavigation = ({props}) => {
     const otherButtons = primaryNav.getElementsByTagName("button");
     const otherButtonsRay = Array.from(otherButtons).filter(item => item !=e.target);
     
-    e.target.className = ("selected");
+    e.target.className = ("btn-primary selected");
     //remove other button classes
     for(const btn of otherButtonsRay){
-      btn.className=("hvr-sweep-to-right")
+      btn.className=("btn-primary hvr-sweep-to-right")
     }
 
   }
@@ -46,14 +48,14 @@ const PrimaryNavigation = ({props}) => {
   return(
     <nav id="primary-nav"className="container">
           <ul>
-              <li><button className="hvr-sweep-to-right"onClick={handleAlgoChange(algo.selectionSort)}>Selection Sort</button></li>
-              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.bubbleSort)}>  Bubble Sort</button></li>
-              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.insertionSort)}> Insertion Sort</button></li>
-              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.combSort)}>Comb Sort</button></li>
-              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.cycleSort)}>Cycle Sort</button></li>
-              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.cocktailSort)}>Cocktail Sort</button></li>
-              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.gnomeSort)}>Gnome Sort</button></li>
-              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.brickSort)}>Brick Sort</button></li>
+              <li><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn-primary hvr-sweep-to-right"onClick={handleAlgoChange(algo.selectionSort)}>Selection Sort</motion.button></li>
+              <li><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn-primary hvr-sweep-to-right" onClick={handleAlgoChange(algo.bubbleSort)}>  Bubble Sort</motion.button></li>
+              <li><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn-primary hvr-sweep-to-right" onClick={handleAlgoChange(algo.insertionSort)}> Insertion Sort</motion.button></li>
+              <li><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn-primary hvr-sweep-to-right" onClick={handleAlgoChange(algo.combSort)}>Comb Sort</motion.button></li>
+              <li><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn-primary hvr-sweep-to-right" onClick={handleAlgoChange(algo.cycleSort)}>Cycle Sort</motion.button></li>
+              <li><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn-primary hvr-sweep-to-right" onClick={handleAlgoChange(algo.cocktailSort)}>Cocktail Sort</motion.button></li>
+              <li><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn-primary hvr-sweep-to-right" onClick={handleAlgoChange(algo.gnomeSort)}>Gnome Sort</motion.button></li>
+              <li><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn-primary hvr-sweep-to-right" onClick={handleAlgoChange(algo.brickSort)}>Brick Sort</motion.button></li>
           </ul>
       </nav>
   )

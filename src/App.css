@@ -66,12 +66,16 @@ header p{
     background-color:var(--dark-primary-color);
 }
 button{
-    background-color:#11161F;
+    
     border:none;
-    color:white;
     font-family: 'Source Code Pro', monospace;
     margin:3px 3px;
     font-size:21px;
+}
+
+.btn-primary{
+    background-color:#11161F;
+    color:white;
 }
 
 /*Animations*/
@@ -311,4 +315,10 @@ button{
     background-color:red !important;
 }
 
-/*hover animation*/
+/*framer motion*/
+.example-container {
+  background: white;
+  border-radius: 30px;
+  width: 150px;
+  height: 150px;
+}

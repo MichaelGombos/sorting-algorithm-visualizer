@@ -1,6 +1,7 @@
 import React from 'react'
 //This file is meant to hold the sorter component, aswell as the list of algorithms
 import { useState } from 'react';
+import { motion } from "framer-motion"
 //the sorter function should instantly run, and then provide a "stepArray" list  
 // this will allow the user to iterate through the array at a given "step" through the alrorithm
 
@@ -91,11 +92,11 @@ const Sorter = (props) => {
             <div className="container">
                 <h2 className="mb-0">{currentSorter.name}</h2>
                 <div className="control-bar">
-                    <button onClick ={handleBeginning}>Restart</button>
-                    <button onClick ={handlePrevious}>Previous</button>
-                    <button onClick ={handlePause}>{play.playing ? "pause" : "play"}</button>
-                    <button onClick ={handleNext}>Next</button>
-                    <button onClick ={handleEnd}>End</button>
+                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}  onClick ={handleBeginning}>Restart</motion.button>
+                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}  onClick ={handlePrevious}>Previous</motion.button>
+                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}  onClick ={handlePause}>{play.playing ? "pause" : "play"}</motion.button>
+                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}  onClick ={handleNext}>Next</motion.button>
+                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}  onClick ={handleEnd}>End</motion.button>
                     {/*TODO need an object that holds, the step, the current step, and calculated the percentage*/}
                     <p>Current Speed: {play.playSpeed}ms</p>
                     <div className="slider-container">
