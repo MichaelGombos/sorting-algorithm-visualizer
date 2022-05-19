@@ -133,6 +133,7 @@ button:hover{
     width: 100%;
     margin: 0 1px;
     font-size:8px;
+    
 }
 .value-bar{
     background-color:var(--primary-color);;
@@ -222,4 +223,49 @@ button:hover{
 }
 .offset-7-8{
     margin-left:87.5%;
+}
+
+/* slider css */
+.slider-container {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #808080; /* Grey background */
+  outline: none; /* Remove outline */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  margin-left:0px;
+  margin-right:0px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  background: gray;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: var(--primary-color);
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: var(--primary-color); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.imRed{
+    background-color:red !important;
 }

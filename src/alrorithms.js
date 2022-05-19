@@ -12,7 +12,8 @@ const logStep = (type,currentRay,index1,index2) => {
     let step = {
      change: changeString,
      currentArray: [...currentRay],
-     percentDone:null
+     index1:index1,
+     index2:index2
      } 
      return step;
 }
@@ -328,8 +329,6 @@ const cycleSort = {
                     let temp = item;
                     item = currentRay[pos];
                     currentRay[pos] = temp;
-                    console.log("item , temp",item,temp)
-                    console.log("currentRay",currentRay)
                     writes++;
                     //this is a write
                     cycleStepArray.push(logStep("write",currentRay,pos,"N/A"));
