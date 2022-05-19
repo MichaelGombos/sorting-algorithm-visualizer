@@ -21,6 +21,11 @@ const Sorter = (props) => {
     const handleBeginning = ()=> {
         //set step to 0
         setStep(0);
+        //reset value bar color
+        const allBars = document.getElementsByClassName("value-bar");
+        for(const bar of allBars){
+                bar.className=("value-bar")
+        }
     }
     const handlePrevious = ()=>{
         //subtract 1 from step
@@ -76,8 +81,8 @@ const Sorter = (props) => {
         let vBar1 = document.querySelectorAll(`div[data-key="${steps[step].index1}"]`)[0].children[1];
         let vBar2 = document.querySelectorAll(`div[data-key="${steps[step].index2}"]`)[0] ? document.querySelectorAll(`div[data-key="${steps[step].index2}"]`)[0].children[1] : vBar1;
         
-        vBar1.className += " imRed";
-        vBar2.className += " imRed";
+        vBar1.className += " bg-primary";
+        vBar2.className += " bg-primary";
         
         const otherBars = document.getElementsByClassName("value-bar");
         for(const bar of otherBars){
@@ -122,11 +127,11 @@ const Sorter = (props) => {
         <div id="sorter-footer" className="container">
             <div id="sorter-description">
                 <h3>Description:</h3>
-                <p>{currentSorter.description}</p>
+                <div>{currentSorter.description}</div>
             </div>
             <div id="sorter-download">
-                <h3>View the code example for this sort</h3>
-                <p>{currentSorter.codeExample}</p>
+                <h3>Step by step breakdown of {currentSorter.name}</h3>
+                <div>{currentSorter.codeExample}</div>
             </div>
         </div>
     </div>

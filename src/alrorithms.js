@@ -22,8 +22,23 @@ const logStep = (type,currentRay,index1,index2) => {
 //its important that the algorims do not mutate the original array.
 const selectionSort = {
     name:"selection sort",
-    description:"//todo informative description of the Selection sort algorithm",
-    codeExample:"//todo informative code example for Selection sort",
+    description:<div><p>Selection sort works by repeatedly finding the minimum element from an unsorted 'part' and putting it at the beginning.<br/><em>This algorithm maintains two different subarrays while sorting</em></p>
+    <ul>
+        <li><p>The sorted subarray</p></li>
+        <li><p>The unsorted subarray</p></li>
+    </ul>
+    <p>in every iteration on this sort, the minimum element from the unsorted subarray is picked up and moved to the sorted subarray</p>
+    </div>,
+    codeExample:<div>
+    <ol>
+        <li><p>Initialize minimum value(min_idx) to location 0</p></li>
+        <li><p>Traverse the array to find the minimum element in the array</p></li>
+        <li><p>While traversing if any element smaller than min_idx is found then swap both the values.</p></li>
+        <li><p>Then, increment min_idx to point to next element</p></li>
+        <li><p>Repeat until array is sorted</p></li>
+
+    </ol>
+    </div>,
     stepsFromArray: (ray) => 
     {
         let n = ray.length;
@@ -65,7 +80,7 @@ const selectionSort = {
 
 const bubbleSort = {
     name:"bubble sort",
-    description:"//todo interesting description of the bubble sort algorithm",
+    description:<div><p>"Bubble sort works by swapping adjacent items of an array if they are in the wrong order. This algorithm is not suited for large data sets due to its high average and worst case time complexity."</p></div>,
     codeExample:"//todo informative code example for bubble sort",
     stepsFromArray:  (ray) =>
     {
@@ -127,8 +142,14 @@ const bubbleSort = {
 
 const insertionSort = {
     name:"insertion sort",
-    description:"//todo informative description of the insertion sort algorithm",
-    codeExample:"//todo informative code example for insertion sort sort",
+    description:<div><p>Insertion sort works similar to sorting cards. The array is first split into a sorted and unsorted part. values from the unsorted part are selected and placed in the correct position in the sorted array"</p></div>,
+    codeExample:<div>
+        <ul>
+            <li><p>Iterate from arr[1] to arr[N] over the array. </p></li>
+            <li><p>Compare the current element (key) to its predecessor. </p></li>
+            <li><p>If the key element is smaller than its predecessor, compare it to the elements before. Move the greater elements one position up to make space for the swapped element.</p></li>
+        </ul>
+    </div>,
     stepsFromArray: (ray) => {
         let StepArray = [{
             change:"Starting Index 0. No change detected.",
@@ -193,7 +214,7 @@ const insertionSort = {
 
 const combSort = {
     name:"comb sort",
-    description:`//todo informative description of the algorithm`,
+    description:<div><p>Comb sort is like BubbleSort+ . It improves on bubble sort by using a gap size larger than 1. This gap value starts with a large value and shrinks by a factor of 1.3 before reaching one. </p></div>,
     codeExample:`//todo informative code example for `,
     stepsFromArray: (ray) => 
     {
@@ -205,7 +226,10 @@ const combSort = {
     return gap;
     }
         //TODO actuall step array calculation
-    let combStepArray = []
+    let combStepArray = [{
+          change:"Starting Index 0. No change detected.",
+          currentArray: [...ray],
+        }];
     let currentRay = [...ray];
     let n = ray.length;
     
@@ -266,11 +290,22 @@ const combSort = {
 
 const cycleSort = {
     name:"cycle sort",
-    description:`//todo informative description of the algorithm`,
-    codeExample:`//todo informative code example for`,
+    description:<div><p>Cycle sort works by turning an array into a number of cycles that can be rotated to generate a sorted array</p></div>,
+    codeExample:<div>
+        <ol>
+            <li><p>Givent an element a, we can find the index where it will occur in the sorted list by first counting the number of elements in the ENTIRE list that are smaller than a </p></li>
+            <li><p>If the element is already in the right spot, do nothing</p></li>
+            <li><p>If not, we will write it into its intended position. </p></li>
+            <li><p>This position is inhabited by a different element 'b'</p></li>
+            <li><p>We will then move 'b' to the correct position, and repeat until a cycle is complete</p></li>
+        </ol>
+    </div>,
     stepsFromArray: (ray) => 
     {
-                let cycleStepArray = []
+                let cycleStepArray = [{
+          change:"Starting Index 0. No change detected.",
+          currentArray: [...ray],
+        }];
         let currentRay = [...ray]
         let n = ray.length;
         // count number of memory writes
@@ -345,7 +380,10 @@ const cocktailSort = {
     codeExample:`//todo informative code example for`,
     stepsFromArray: (ray) => 
     {
-        let cocktailStepArray = []
+        let cocktailStepArray = [{
+          change:"Starting Index 0. No change detected.",
+          currentArray: [...ray],
+        }];
         let currentRay = [...ray]
         let swapped = true;
         let start = 0;
@@ -481,7 +519,10 @@ const gnomeSort = {
     codeExample:`//todo informative code example for `,
     stepsFromArray: (ray) => 
     {
-        let gnomeStepArray = [];
+        let gnomeStepArray = [{
+          change:"Starting Index 0. No change detected.",
+          currentArray: [...ray],
+        }];
         let currentRay = [...ray]
         let index = 0;
         let n = ray.length;
@@ -529,7 +570,10 @@ const brickSort = {
     codeExample:`//todo informative code example for `,
     stepsFromArray: (ray) => 
     {
-        let oddEvenStepArray = [];
+        let oddEvenStepArray = [{
+          change:"Starting Index 0. No change detected.",
+          currentArray: [...ray],
+        }];
         let currentRay = [...ray]
         let n = ray.length;
         let isSorted = false;
