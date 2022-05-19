@@ -41,24 +41,30 @@ const PrimaryNavigation = ({props}) => {
 
   }
   
-
+  /*TODO
+  recursive bubble
+  comb
+  Pigeonhole
+  Cycle
+  Cocktail
+  bitonic
+  pancake
+  Binary Insertion
+  Bogo
+  Gnome
+  Stooge
+  Brick
+  */
   return(
     <nav id="primary-nav"className="container">
           <ul>
               <li><button onClick={handleAlgoChange(algo.selectionSort)}>Selection Sort</button></li>
               <li><button onClick={handleAlgoChange(algo.bubbleSort)}>  Bubble Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.recursiveBubbleSort)}>  Bubble Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.insertionSort)}> InertionSort</button></li>
+              <li><button onClick={handleAlgoChange(algo.insertionSort)}> Insertion Sort</button></li>
               <li><button onClick={handleAlgoChange(algo.combSort)}>Comb Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.pigeonholeSort)}>Pigeonhole Sort</button></li>
               <li><button onClick={handleAlgoChange(algo.cycleSort)}>Cycle Sort</button></li>
               <li><button onClick={handleAlgoChange(algo.cocktailSort)}>Cocktail Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.bitonicSort)}>Bitonic Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.pancakeSort)}>Pancake sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.binaryInsertionSort)}>Binary Insertion Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.bogoSort)}>BogoSort</button></li>
               <li><button onClick={handleAlgoChange(algo.gnomeSort)}>Gnome Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.stoogeSort)}>Stooge Sort</button></li>
               <li><button onClick={handleAlgoChange(algo.brickSort)}>Brick Sort</button></li>
           </ul>
       </nav>
