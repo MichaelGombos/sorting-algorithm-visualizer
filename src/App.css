@@ -35,9 +35,12 @@ body{
     color:white;
 }
 
-ul {
-    padding:0;
+#primary-nav ul{
     list-style-type: none;
+    padding:0;
+}
+ul {
+   
 }
 header{
     background-color:  var(--darker-background-color);
@@ -180,7 +183,7 @@ button{
     
 }
 .value-bar{
-    background-color:var(--primary-color);;
+    background-color:white;
 
     width:100%;
 }
@@ -311,8 +314,8 @@ button{
 }
 
 /* current swap*/
-.imRed{
-    background-color:red !important;
+.bg-primary{
+    background-color: var(--primary-color); 
 }
 
 /*framer motion*/
