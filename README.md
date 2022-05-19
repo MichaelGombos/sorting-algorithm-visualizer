@@ -2,9 +2,9 @@
 
 This project was created to provide a visual representation and explination for sorting algorithms. 
 
-## Build
+## Check out the live site
 
-{build instructions}
+[{build instructions}](https://62867586143516009c9a85c1--sparkling-tiramisu-b58a5d.netlify.app/)
 
 ## Usage
 Use the [start,previous,pause,next,last] keys to proceed through the algorithm.
