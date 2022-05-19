@@ -38,7 +38,7 @@ const PrimaryNavigation = ({props}) => {
     e.target.className = ("selected");
     //remove other button classes
     for(const btn of otherButtonsRay){
-      btn.className=("")
+      btn.className=("hvr-sweep-to-right")
     }
 
   }
@@ -46,14 +46,14 @@ const PrimaryNavigation = ({props}) => {
   return(
     <nav id="primary-nav"className="container">
           <ul>
-              <li><button onClick={handleAlgoChange(algo.selectionSort)}>Selection Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.bubbleSort)}>  Bubble Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.insertionSort)}> Insertion Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.combSort)}>Comb Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.cycleSort)}>Cycle Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.cocktailSort)}>Cocktail Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.gnomeSort)}>Gnome Sort</button></li>
-              <li><button onClick={handleAlgoChange(algo.brickSort)}>Brick Sort</button></li>
+              <li><button className="hvr-sweep-to-right"onClick={handleAlgoChange(algo.selectionSort)}>Selection Sort</button></li>
+              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.bubbleSort)}>  Bubble Sort</button></li>
+              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.insertionSort)}> Insertion Sort</button></li>
+              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.combSort)}>Comb Sort</button></li>
+              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.cycleSort)}>Cycle Sort</button></li>
+              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.cocktailSort)}>Cocktail Sort</button></li>
+              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.gnomeSort)}>Gnome Sort</button></li>
+              <li><button className="hvr-sweep-to-right" onClick={handleAlgoChange(algo.brickSort)}>Brick Sort</button></li>
           </ul>
       </nav>
   )
@@ -61,6 +61,7 @@ const PrimaryNavigation = ({props}) => {
 
   
 function App() {
+  // [  65, 58, 76, 47, 61, 77, 91, 57, 25, 53, 42, 34, 97, 71, 9, 52, 88, 100, 59, 70, 13, 27, 8, 44 ]
   let defaultArray = [  65, 58, 76, 47, 61, 77, 91, 57, 25, 53, 42, 38, 6, 96, 80, 72, 24, 37, 22, 64, 66, 68, 63, 26, 35, 54, 93, 60, 21, 33, 43, 87, 3, 30, 62, 17, 1, 34, 97, 71, 9, 52, 88, 100, 59, 70, 13, 27, 8, 44
 ,65, 58, 76, 47, 61, 77, 91, 57, 25, 53, 42, 38, 6, 96, 80, 72, 24, 37, 22, 64, 66, 68, 63, 26, 35, 54, 93, 60, 21, 33, 43, 87, 3, 30, 62, 17, 1, 34, 97, 71, 9, 52, 88, 100, 59, 70, 13, 27, 8, 44
 ];
